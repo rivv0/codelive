@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for CodeMirror */
+.cm-editor {
+  height: 100%;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.cm-focused {
+  outline: none;
+}
+
+/* User cursor styles */
+.remote-cursor {
+  position: absolute;
+  width: 2px;
+  height: 1.2em;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.remote-cursor::after {
+  content: attr(data-user);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background: inherit;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  white-space: nowrap;
+}
